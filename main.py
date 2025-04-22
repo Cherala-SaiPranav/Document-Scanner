@@ -78,12 +78,12 @@ while True:
 
     # wraping the document in frame
     warped = four_point_transform(frame_copy, document_contour.reshape(4, 2))
-    cv2.imshow("Warped", cv2.resize(warped, (int(scale * width), int(scale * height))))
+    # cv2.imshow("Warped", cv2.resize(warped, (int(scale * width), int(scale * height))))
 
     processed = image_processing(warped)
     if processed.shape[0] > 20 and processed.shape[1] > 20:
         processed = processed[10:processed.shape[0] - 10, 10:processed.shape[1] - 10]
-        cv2.imshow("Processed", cv2.resize(processed, (int(scale * width), int(scale * height))))
+        # cv2.imshow("Processed", cv2.resize(processed, (int(scale * width), int(scale * height))))
     else:
         print("Processed image too small to crop.")
 
